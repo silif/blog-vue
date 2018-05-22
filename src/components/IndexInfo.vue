@@ -6,7 +6,7 @@
 </template>
 <script>
 export default {
-  name: 'IndexInfo'
+  name: 'indexInfo'
 }
 </script>
 <style>

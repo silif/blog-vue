@@ -1,19 +1,21 @@
 <template>
     <div class="wrap">
+      <h3>{{tagname}}</h3>
       <PostList :articles="articles"/>
     </div>
 </template>
 
 <script>
-import PostList from '../components/PostList'
 import axios from 'axios'
-import {ALL_POSTS} from '../utils/constant.js'
+import PostList from '../components/PostList'
+import {POSTS_BY_TAGNAME} from '../utils/constant.js'
 // import dayjs from 'dayjs'
 export default {
-  name: 'archives',
+  name: 'archive',
   data () {
     return {
-      articles: []
+      articles: [],
+      tagname: ''
     }
   },
   components: {
@@ -21,7 +23,8 @@ export default {
   },
   mounted () {
     const self = this
-    axios.get(`${ALL_POSTS}`)
+    const tagname = this.$route.params.tagname
+    axios.get(`${POSTS_BY_TAGNAME}/${tagname}`)
       .then(function (response) {
         console.log(response)
         self.articles = response.data.data
@@ -40,6 +43,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scopd>
+<style>
+
 </style>

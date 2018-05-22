@@ -7,7 +7,7 @@
 <script>
 import IndexInfo from '../components/IndexInfo'
 export default {
-  name: 'Index',
+  name: 'index',
   components: {
     IndexInfo
   }

@@ -7,7 +7,7 @@
 import axios from 'axios'
 import {ONE_POST} from '../utils/constant.js'
 export default {
-  name: 'Post',
+  name: 'post',
   data () {
     return {
       loading: true,

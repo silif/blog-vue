@@ -6,6 +6,7 @@ import router from './router'
 Vue.config.productionTip = false
 // import VueHighlightJS from 'vue-highlightjs'
 require('./assets/normallize.css')
+require('./assets/public.css')
 // Tell Vue.js to use vue-highlightjs
 // Vue.use(VueHighlightJS)
 /* eslint-disable no-new */

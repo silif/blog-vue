@@ -6,6 +6,7 @@ import About from '@/pages/About.vue'
 import Entry from '@/pages/Entry.vue'
 import EntryHeader from '@/components/EntryHeader.vue'
 import Archives from '@/pages/Archives.vue'
+import Archive from '@/pages/Archive.vue'
 import Guitar from '@/pages/Guitar.vue'
 Vue.use(Router)
 // router.beforeEach((to, from, next) => {
@@ -19,19 +20,19 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Index',
+      name: 'index',
       component: Index,
       meta: {
-        title: ''
+        title: 'te'
       }
     }, {
       path: '/yd',
-      name: 'EntryHeader',
+      name: 'entryHeader',
       component: EntryHeader,
       children: [
         {
           path: 'post/:id',
-          name: 'Post',
+          name: 'post',
           component: Post
         }, {
           path: 'about',
@@ -42,11 +43,15 @@ export default new Router({
           name: 'entry',
           component: Entry
         }, {
-          path: 'Archives',
+          path: 'archives',
           name: 'archives',
           component: Archives
         }, {
-          path: 'Guitar',
+          path: 'archive/:tagname',
+          name: 'archive',
+          component: Archive
+        }, {
+          path: 'guitar',
           name: 'guitar',
           component: Guitar
         }

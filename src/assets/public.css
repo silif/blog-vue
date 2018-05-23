@@ -51,3 +51,7 @@
     -webkit-animation-name: bounceInDown;
     animation-name: bounceInDown;
   }
+.mainbody{
+  width: 800px;
+  margin: auto;
+}

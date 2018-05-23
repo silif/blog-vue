@@ -1,6 +1,12 @@
 <template>
-  <div class="post" v-html="post">
-
+  <div class="mainbody">
+    <div class="infomation">
+      <!-- <span>{{postInfo.title}}</span> -->
+      <span>标签：{{postInfo.tagname}}</span>
+      <span>创建日期：{{postInfo.created}}</span>
+    </div>
+    <div class="post" v-html="post">
+    </div>
   </div>
 </template>
 <script>
@@ -11,7 +17,8 @@ export default {
   data () {
     return {
       loading: true,
-      post: ''
+      post: '',
+      postInfo: {}
     }
   },
   mounted () {
@@ -22,6 +29,13 @@ export default {
       .then(function (response) {
         if (response.data.result === 'success' && response.data.data) {
           self.post = response.data.data.post
+          let postData = response.data.data
+          self.postInfo = {
+            title: postData.title,
+            created: postData.createdAt,
+            id: postData.id,
+            tagname: postData.tagname
+          }
           self.loading = false
         } else {
           self.result = 'nodata'
@@ -55,5 +69,9 @@ export default {
   background: #f6f8fa;
   padding: .6em;
   border-radius: 4px;
+}
+.infomation{
+  text-align: right;
+  padding: 1em;
 }
 </style>

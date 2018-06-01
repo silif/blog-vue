@@ -1,5 +1,4 @@
 
-import func from './vue-temp/vue-editor-bridge';
 <style scoped>
 .upload-form label{
     width: 6em;
@@ -83,8 +82,8 @@ export default {
       axios.post(`${NEW_POST}/${username}/${password}`, params)
         .then(function (response) {
           console.log(response)
-          if(response.data.result === 'success') {
-            alert("上传成功！")
+          if (response.data.result === 'success') {
+            alert('上传成功！')
           }
         })
         .catch(function (error) {

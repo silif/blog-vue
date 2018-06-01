@@ -10,6 +10,7 @@ require('./assets/public.css')
 // Tell Vue.js to use vue-highlightjs
 // Vue.use(VueHighlightJS)
 /* eslint-disable no-new */
+Vue.use(require('vue-moment'))
 new Vue({
   el: '#app',
   router,

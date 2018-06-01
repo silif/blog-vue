@@ -8,6 +8,7 @@ import EntryHeader from '@/components/EntryHeader.vue'
 import Archives from '@/pages/Archives.vue'
 import Archive from '@/pages/Archive.vue'
 import Guitar from '@/pages/Guitar.vue'
+import Upload from '@/pages/Upload.vue'
 Vue.use(Router)
 // router.beforeEach((to, from, next) => {
 //   if (to.meta.title) {
@@ -54,6 +55,10 @@ export default new Router({
           path: 'guitar',
           name: 'guitar',
           component: Guitar
+        }, {
+          path: 'upload',
+          name: 'upload',
+          component: Upload
         }
       ]
     }

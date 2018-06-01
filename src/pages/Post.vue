@@ -3,7 +3,8 @@
     <div class="infomation">
       <!-- <span>{{postInfo.title}}</span> -->
       <span>标签：{{postInfo.tagname}}</span>
-      <span>创建日期：{{postInfo.created}}</span>
+      <span>创建日期：{{postInfo.created | moment("YYYY-MM-DD")}}</span>
+      <span class="id">id：{{postInfo.id}}</span>
     </div>
     <div class="post" v-html="post">
     </div>
@@ -73,5 +74,8 @@ export default {
 .infomation{
   text-align: right;
   padding: 1em;
+}
+.id{
+  text-decoration: line-through
 }
 </style>

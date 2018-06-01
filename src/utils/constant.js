@@ -1,4 +1,10 @@
-const HOST = 'http://localhost:3000'
+let HOST
+const EVN = process.env.NODE_ENV
+if (EVN === 'development') {
+  HOST = 'http://localhost:3000'
+} else {
+  HOST = 'http://serverip:3000'
+}
 const LATEST_POSTS = `${HOST}/api/latest`
 const ONE_POST = `${HOST}/api/posts`
 const ALL_POSTS = `${HOST}/api/allposts`
